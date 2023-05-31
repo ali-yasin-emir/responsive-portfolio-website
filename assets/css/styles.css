@@ -197,6 +197,26 @@ svg {
   color: var(--first-color);
 }
 
+.nav__teams {
+  padding-top: 0.25rem;
+  display: flex;
+  column-gap: 1.2rem;
+}
+
+.bbl {
+  width: 1.6rem;
+  height: 1.6rem;
+  /* background-color: var(--first-color); */
+  cursor: pointer;
+}
+
+.ff {
+  width: 1.6rem;
+  height: 1.6rem;
+  /* background-color: var(--first-color); */
+  cursor: pointer;
+}
+
 /* Navigation for mobile devices */
 
 @media screen and (max-width: 1023px) {
@@ -244,6 +264,23 @@ svg {
 }
 
 /* Add blur to header */
+
+.blur-header {
+  background-color: transparent;
+}
+
+.blur-header::after {
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0, 0%, 10%, 0.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For Safari */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -333,6 +370,33 @@ svg {
 }
 
 /*=============== ABOUT ===============*/
+
+.about__container {
+  row-gap: 2.5rem;
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__description {
+  margin-bottom: 2rem;
+}
+
+.about__image {
+  justify-self: center;
+}
+
+.about__blob {
+  width: 320px;
+}
+
+.about__blob path {
+  stroke: var(--first-color);
+}
+
+.about__img {
+}
 
 /*=============== SKILLS ===============*/
 
