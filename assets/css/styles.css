@@ -185,11 +185,16 @@ svg {
 }
 
 .nav__toggle,
-.nav__close {
+.nav__close,
+.nav__colors {
   display: flex;
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
+}
+
+.nav__colors {
+  color: var(--first-color);
 }
 
 /* Navigation for mobile devices */
@@ -276,7 +281,56 @@ svg {
   margin-block: 1rem 1.5rem;
 }
 
+.home__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.home__social-link {
+  display: flex;
+  background-color: var(--first-color-alt);
+  padding: 0.5rem;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  transition: transform 0.4s;
+}
+
+.home__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+
+.home__image {
+  justify-self: center;
+}
+
+.home__img {
+  width: 48rem;
+  transform: translate(-2.4rem, -4rem);
+}
+
+.home__blob {
+  width: 320px;
+  fill: var(--first-color);
+  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
+}
+
 /*=============== BUTTON ===============*/
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  transition: box-shadow 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, 0.25);
+}
 
 /*=============== ABOUT ===============*/
 

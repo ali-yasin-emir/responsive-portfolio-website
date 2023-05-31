@@ -31,6 +31,51 @@ const linkAction = () => {
 };
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
+/*=============== Change Color Style ===============*/
+
+let colorPalette = document.querySelector('.nav__colors');
+
+colorPalette.addEventListener('click', () => {
+  let root = document.querySelector(':root');
+  let gcs = getComputedStyle(root);
+  let hue = gcs.getPropertyValue('--hue');
+  if (hue === '162') {
+    console.log(hue);
+    root.style.setProperty('--hue', '2');
+  } else {
+    root.style.setProperty('--hue', '162');
+  }
+});
+
+/////////////////////////
+
+/*
+
+  if (hue === '162') {
+    console.log('true');
+    root.style.setProperty('--hue', '22');
+  } else {
+    console.log('false');
+  }
+
+let colorPalette = document.querySelector('.nav__colors');
+
+colorPalette.addEventListener('click', () => {
+  let root = document.querySelector(':root');
+  let gcs = getComputedStyle(root);
+  let hue = gcs.getPropertyValue('--hue');
+  console.log(hue);
+  root.style.setProperty('--hue', '162');
+  if (hue === '162') {
+    console.log('true');
+    root.style.setProperty('--hue', '22');
+  } else {
+    console.log('false');
+  }
+});
+
+*/
+
 /*=============== ADD BLUR TO HEADER ===============*/
 
 /*=============== EMAIL JS ===============*/
