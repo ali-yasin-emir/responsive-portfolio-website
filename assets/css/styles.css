@@ -227,7 +227,7 @@ svg {
     /* right: 0; */
     right: -100%;
     background-color: hsla(0, 0%, 10%, 0.3);
-    width: 54%;
+    width: 56%;
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
