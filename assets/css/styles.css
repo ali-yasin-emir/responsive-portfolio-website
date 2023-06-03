@@ -298,8 +298,8 @@ svg {
 .home__container {
   padding-top: 2rem;
   row-gap: 2.5rem;
-  height: calc(100vh);
-  margin-inline: 1.5rem;
+  height: calc(100vh - 8rem);
+  padding-block: 0rem 2.4rem;
 }
 
 .home__content {
@@ -356,7 +356,7 @@ svg {
 }
 
 .home__blob {
-  width: 320px;
+  width: 200px;
   fill: var(--first-color);
   filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
 }
