@@ -299,6 +299,7 @@ svg {
   padding-top: 2rem;
   row-gap: 2.5rem;
   height: calc(100vh - 7rem);
+  margin-inline: 1.5rem;
 }
 
 .home__content {
@@ -716,14 +717,6 @@ svg {
 
   .services__card {
     padding-block: 1.5rem;
-  }
-}
-
-/* it can be change in the future */
-
-@media screen and (min-width: 320px) {
-  .container {
-    margin-inline: 1.5rem;
   }
 }
 
