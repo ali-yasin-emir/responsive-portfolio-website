@@ -227,7 +227,7 @@ svg {
     /* right: 0; */
     right: -100%;
     background-color: hsla(0, 0%, 10%, 0.3);
-    width: 64%;
+    width: 54%;
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
@@ -747,7 +747,7 @@ svg {
 
 @media screen and (min-width: 768px) {
   .nav__menu {
-    width: 50%;
+    width: 55%;
   }
 
   .home__container,
