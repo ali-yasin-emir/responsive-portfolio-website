@@ -11,7 +11,7 @@
       type="image/x-icon"
     /> -->
 
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon-2.png">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png">
 
 
     <!--=============== REMIXICONS ===============-->
@@ -32,7 +32,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active__link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About</a>
@@ -133,20 +133,19 @@
             <div class="home__social">
               <a
                 target="_blank"
-                href="https://github.com/"
+                href="https://github.com/ali-yasin-emir"
                 class="home__social-link"
                 ><i class="ri-github-fill"></i
               ></a>
               <a
                 target="_blank"
-                href="https://dribbble.com/
+                href="https://www.behance.net/aliyasinemir
             "
                 class="home__social-link"
-                ><i class="ri-dribbble-line"></i
-              ></a>
+                ><i class="ri-behance-line"></i></a>
               <a
                 target="_blank"
-                href="https://www.linkedin.com/
+                href="https://www.linkedin.com/in/ali-yasin-emir/
             "
                 class="home__social-link"
                 ><i class="ri-linkedin-box-fill"></i
@@ -310,7 +309,7 @@
         <div class="skills__container container grid">
           <div class="skills__data">
             <h3 class="section__subtitle">Favorite <span>Skills</span></h3>
-            <div class="section__title">My Skills</div>
+            <h2 class="section__title">My Skills</h2>
             <p class="skills__description">
               See fully what skills I have and perform, to develop the projects
               for you.
@@ -429,18 +428,58 @@
       </section>
 
       <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact"></section>
+      <section class="contact section" id="contact">
+        <h3 class="section__subtitle">
+          Get In <span>Touch</span>
+        </h3>
+        <h2 class="section__title">
+          Contact Me
+        </h2>
+        <div class="contact__container container grid">
+          <form action="" class="contact__form" id="contact-form">
+            <div class="contact__group">
+              <input type="text" name="user_name" requred placeholder="Enter your name" class="contact__input">
+              <input type="email" name="user_email" requred placeholder="Enter your email" class="contact__input">
+            </div>
+            <textarea name="user_project" required placeholder="Enter your message" class="contact__input"></textarea>
+            <p class="contact__message" id="contact-message"></p>
+            <button  type="submit" class="button contact__button">Send Message</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div class="footer__data">
+          <h1 class="footer__title">Ali Yasin  <span>Emir</span>
+          </h1>
+          <h2 class="footer__education">Front-end Developer</h2>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/aliyasin.emir" target="_blank" class="footer__social-link"><i class="ri-facebook-circle-line"></i></a>
+          <a href="https://www.instagram.com/ali.yasin.emir/" target="_blank" class="footer__social-link"><i class="ri-instagram-line"></i></a>
+          <a href="https://twitter.com/weakton" target="_blank" class="footer__social-link"><i class="ri-twitter-line"></i></a>
+        </div>
+        
+        <span class="footer__copy">
+          &#169; Copyright Weakton All rights reserved
+        </span>
+
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
 
     <!--=============== EMAIL JS ===============-->
+
+    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>

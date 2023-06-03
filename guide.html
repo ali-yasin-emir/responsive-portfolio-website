@@ -1,0 +1,393 @@
+<!--
+/////////////////////
+
+:root{} part
+
+--hue: 162; // 
+--first-color: hsl(var(--hue), 100%, 40%); //  
+services__icon, section__subtitle span, nav__logo span, nav__colors,
+ bbl-ff, .nav__link:hover, .sectionName__title, button, sectionName__blob path, sectionName__item::marker,
+ sectionName__card:hover, services__icon
+--first-color-alt: hsl(var(--hue), 56%, 35%); //  .home__social-link için background-color olarak
+/* 
+--title-color: hsl(228, 8%, 95%); 
+ .section__title, .section__subtitle, sectionName__button, nav__logo için, sectionName__item, 
+.sectionName__subtitle, .sectionName__button , h1, h2, h3, h4
+*/
+--text-color: hsl(228, 8%, 65%); // body  için color olarak
+--body-color: hsl(228, 15%, 20%); // body için background-color olarak
+--container-color: hsl(228, 15%, 15%); //  .section__container, .header, sectionName, .sectionName__card için background-color olarak
+
+//////////
+
+ --header-height: 3.5rem; // .nav kullanıyor height olarak
+
+/*========== Font and typography ==========*/
+
+  --body-font: 'Poppins', sans-serif; // body
+  --biggest-font-size: 2rem; // .home__title -> tek h1 olan class
+  --bigger-font-size: 1.25rem; // .home__subtitle, .home__education -> home'a bağlı h3 olan classlar
+  --h1-font-size: 1.5rem; // 
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem; // body
+  --small-font-size: 0.813rem; .section__subtitle, .projects__button
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+//////////////////////////////
+
+/*========== RESET CLASSES ==========*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button,
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/////////////////////
+
+general css classes
+comment
+
+- main
+- section
+- container
+- grid
+- section__subtitle
+- section__title
+- button
+
+///////////////
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+.section {
+  padding-block: 5rem 2rem;
+}
+
+.container{
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  font-size: var(--small-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.section__subtitle span {
+  color: var(--first-color);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  transition: box-shadow 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, 0.25);
+}
+
+////////////////
+
+other css classes
+
+- sectionName
+- sectionName__container
+- sectionName__data
+- sectionName__description
+- sectionName__image
+- sectionName__blob
+
+
+////////////////////
+
+.sectionName{
+  background-color: var(--container-color); // renk olmaya da bilir yani body rengine sahip olabilir.
+}
+
+.sectionName__container{
+    row-gap: 2.5rem;
+}
+
+.sectionName__data{  
+  text-align: center;
+}
+
+.sectionName__description{
+    margin-bottom: 2rem;
+}
+
+
+.sectionName__image{
+    justify-self: center;
+}
+
+.sectionName__blob{
+    width: 320px;
+}
+
+.sectioName path {
+  stroke: var(--first-color);
+}
+
+
+///////////////
+
+body
+main -> main -> section -> .sectionName__container -> sectionName__data + sectionName__image
+
+! Eğer section içinde çok fazla kısım olmayacaksa direkt başlıkları sectionName__data olmadan da yazabiliriz.
+! Yani wraplemek için itemları gerek olup olmadığından emin olmak gerek.
+
+/////////////// 
+
+-->
+
+<main class="main">
+  <section class="sectionName section" id="sectionName">
+    <div class="sectionName__container container grid">
+      <div class="sectionName__data">
+        <h3 class="section__subtitle">My <span>Intro</span></h3>
+        <h2 class="section__title">About Me</h2>
+        <p class="sectionName__description">
+          Frontend developer, I create web pages with UI / UX user interface, I
+          have years of experience and many clients are happy with the projects
+          carried out.
+        </p>
+        <a href="#contact" class="button">Contact Me</a>
+      </div>
+      <div class="sectionName__image">
+        <svg
+          class="sectionName__blob"
+          viewBox="0 0 550 592"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask id="maskBorder" mask-type="alpha">
+            <path
+              d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 
+           171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 
+           448.468 508.583 456.391 501.157 460.678L287 584.322C279.574 588.609 
+           270.426 588.609 263 584.322L48.843 460.678C41.4174 456.391 36.843 448.468 36.843 
+           439.894V192.606C36.843 184.032 41.4174 176.109 48.843 171.822L263 48.1782Z"
+              fill="black"
+            />
+          </mask>
+          <g mask="url(#maskBorder)">
+            <rect x="37" width="476" height="630" fill="url(#pattern2)" />
+
+            <path
+              d="M285 51.6423L499.157 175.286C505.345 178.859 509.157 185.461 509.157 
+           192.606V439.894C509.157 447.039 505.345 453.641 499.157 457.214L285 
+           580.858C278.812 584.43 271.188 584.43 265 580.858L50.843 457.214C44.655 453.641 
+           40.843 447.039 40.843 439.894V192.606C40.843 185.461 44.655 178.859 50.843 
+           175.286L265 51.6423C271.188 48.0697 278.812 48.0696 285 51.6423Z"
+              stroke="black"
+              stroke-width="10"
+            />
+          </g>
+
+          <rect x="37" width="476" height="300" fill="url(#pattern3)" />
+
+          <defs>
+            <pattern
+              id="pattern2"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                href="#imageBorder"
+                transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"
+              />
+            </pattern>
+
+            <pattern
+              id="pattern3"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                href="#imageBorder"
+                transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"
+              />
+            </pattern>
+
+            <!-- Insert your profile (recommended size: 640 x 940) -->
+            <image
+              class="about__img"
+              id="imageBorder"
+              width="640"
+              height="940"
+              href="assets/img/perfil-4.png"
+            />
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main class="main">
+  <section class="questions section" id="" questions>
+    <div class="questions__container container grid">
+      <div class="questions__data">
+        <h3 class="section__subtitle">
+          Frequently Asked <span>Questions</span>
+        </h3>
+        <h2 class="section__title">1</h2>
+        <p class="questions__description">
+          What is your favourite computer game?
+        </p>
+        <a href="#questions" class="button">Ask</a>
+      </div>
+      <div class="questions__image">
+        <img src="" alt="questions__img" />
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 
+
+.main{
+  overflow: hidden;
+}
+
+.questions{
+
+}
+
+.section{
+  padding-block: 5rem 2rem;
+}
+
+.questions__container{
+    row-gap: 2rem;
+    justify-content: center;
+    padding-block: 1rem;
+    / padding-bottom: 1rem; padding-top: 1rem; isteğe bağlı
+}
+
+container{
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid{
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.questions__data{
+text-align: center;
+}
+
+
+
+
+-->
+
+<!-- 
+
+  ! butonu kendi boyutuna getirmek için justify-self: center; yapılır.
+
+-->

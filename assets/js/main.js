@@ -36,11 +36,15 @@ navLink.forEach((n) => n.addEventListener('click', linkAction));
 const root = document.querySelector(':root');
 const gcs = getComputedStyle(root);
 const hue = gcs.getPropertyValue('--hue');
+const firstColor = gcs.getPropertyValue('--first-color');
 const colorPalette = document.querySelector('.nav__colors');
 const homeTitle = document.querySelector('.home__title');
+
 /* Adding color mode sound */
 const colorSound = new Audio('/assets/sound/color.mp3');
+colorSound.volume = 0.32;
 const defaultColorSound = new Audio('/assets/sound/default-color.mp3');
+defaultColorSound.volume = 0.32;
 
 console.log(hue);
 
@@ -160,9 +164,83 @@ newPerson.greet();
 */
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+  contactMessage = document.getElementById('contact-message');
+const sendEmail = (e) => {
+  e.preventDefault();
+  // serviceID - templateID - #form - publicKey
+  emailjs
+    .sendForm(
+      'service_xux9urk',
+      'template_4utuvui',
+      '#contact-form',
+      'I40pXLEvrREhdkbJ9'
+    )
+    .then(
+      () => {
+        // Show sent message
+        contactMessage.textContent = 'Message sent successfully ✅';
+        // Remove message after five seconds
+        setTimeout(() => {
+          contactMessage.textContent = '';
+        }, 5000);
+        // Clear input fields
+        contactForm.reset();
+      },
+
+      () => {
+        // Show error message
+        contactMessage.textContent = 'Message not sent (service error) ❌';
+      }
+    );
+};
+contactForm.addEventListener('submit', sendEmail);
 
 /*=============== SHOW SCROLL UP ===============*/
 
+const scrollUp = () => {
+  const scrollUp = document.getElementById('scroll-up');
+  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+  this.scrollY >= 350
+    ? scrollUp.classList.add('show-scroll')
+    : scrollUp.classList.remove('show-scroll');
+};
+window.addEventListener('scroll', scrollUp);
+
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
+const sections = document.querySelectorAll('section[id]');
+
+const scrollActive = () => {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach((current) => {
+    const headerHeight = gcs.getPropertyValue('--header-height');
+    console.log(headerHeight); // 3.5rem
+    const hh1 = parseFloat(headerHeight) * 16;
+
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - hh1,
+      sectionId = current.getAttribute('id'),
+      sectionsClass = document.querySelector(
+        '.nav__menu a[href*=' + sectionId + ']'
+      );
+    //
+    scrollY > sectionTop && scrollY <= sectionTop + sectionHeight
+      ? sectionsClass.classList.add('active-link')
+      : sectionsClass.classList.remove('active-link');
+  });
+};
+window.addEventListener('scroll', scrollActive);
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+/* 
+
+1-) 3.5 rem ---> 3.5 sayısını al, yani sadece Number olanı al.
+2-) Dönen sayıyı 16 ile çarp.
+
+const headerHeight = gcs.getPropertyValue('--header-height');
+console.log(headerHeight); // 3.5rem
+const hh1 = parseFloat(headerHeight) * 16;
+
+*/
