@@ -1,3 +1,8 @@
+// window.addEventListener('load', function () {
+//   // Yüklenme tamamlandığında gerçekleştirilecek eylemler buraya yazılır
+//   console.log('Website yüklendi!');
+// });
+
 /*=============== SHOW MENU ===============*/
 
 const navMenu = document.getElementById('nav-menu'),
@@ -46,8 +51,6 @@ colorSound.volume = 0.32;
 const defaultColorSound = new Audio('/assets/sound/default-color.mp3');
 defaultColorSound.volume = 0.32;
 
-console.log(hue);
-
 colorPalette.addEventListener('click', () => {
   defaultColorSound.play();
   root.style.removeProperty('--hue');
@@ -70,6 +73,10 @@ bbl.addEventListener('click', () => {
   root.style.setProperty('--first-color-alt', 'hsl(267, 51%, 59%)');
   homeTitle.style.setProperty('color', 'yellow');
   root.style.setProperty('--container-color', 'hsl(267, 47%, 24%');
+
+  // localstorage section
+
+  localStorage.setItem('bbl-firstColor', 'hsl(250, 100%, 75%)');
 });
 
 // FF
@@ -84,6 +91,8 @@ ff.addEventListener('click', () => {
   homeTitle.style.setProperty('color', 'hsla(193, 82%, 52%, 1)');
   root.style.setProperty('--container-color', 'hsla(196, 85%, 32%, 1)');
 });
+
+/* Save the color mode in localstorage */
 
 /* Change container color */
 
@@ -112,13 +121,6 @@ colorPalette.addEventListener('click', () => {
 /*=============== ADD BLUR TO HEADER ===============*/
 
 // pageYOffset = scrollY, but it's better to use pageYOffset because of the browsercompatibility
-
-window.addEventListener('scroll', () => {
-  console.log(window.pageYOffset);
-  if (window.scrollY >= 50) {
-    console.log('header is blur now');
-  }
-});
 
 const blurHeader = () => {
   const header = document.getElementById('header');
@@ -216,7 +218,7 @@ const scrollActive = () => {
 
   sections.forEach((current) => {
     const headerHeight = gcs.getPropertyValue('--header-height');
-    console.log(headerHeight); // 3.5rem
+    // console.log(headerHeight); // 3.5rem
     const hh1 = parseFloat(headerHeight) * 16;
 
     const sectionHeight = current.offsetHeight,

@@ -121,12 +121,12 @@ svg {
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .grid {
   display: grid;
-  row-gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 .section {
@@ -174,6 +174,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-inline: 2rem;
 }
 
 .nav__logo {
@@ -227,7 +228,7 @@ svg {
     /* right: 0; */
     right: -100%;
     background-color: hsla(0, 0%, 10%, 0.3);
-    width: 56%;
+    width: 58%;
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
@@ -703,9 +704,19 @@ svg {
 }
 
 /*=============== BREAKPOINTS ===============*/
+
 /* For small devices */
 
 @media screen and (max-width: 320px) {
+  .nav {
+    white-space: nowrap;
+  }
+
+  .nav__teams,
+  .nav__colors {
+    display: none;
+  }
+
   .container {
     margin-inline: 1rem;
   }
@@ -724,7 +735,7 @@ svg {
 
 @media screen and (max-width: 1152px) {
   .nav {
-    margin-inline: 2rem;
+    /* margin-inline: 2rem; */
   }
 
   .skills__container {
@@ -810,7 +821,6 @@ svg {
   .nav__list {
     flex-direction: row;
     gap: 3rem;
-    padding-left: 3rem; /* you can change if you want */
   }
 
   .nav__menu {
@@ -821,7 +831,17 @@ svg {
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px); /* For Safari */
   }
+
   @media screen and (min-width: 1152px) {
+    .container {
+      margin-inline: 20rem;
+    }
+
+    .nav {
+      margin-inline: 12rem;
+      white-space: nowrap;
+    }
+
     .home__container {
       margin-inline: auto;
     }
